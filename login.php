@@ -13,7 +13,7 @@
   $filtros = ['usuario'=>''.$usuario.'', 'password'=>''.$password.'']; 
       //print_r($filtros); //PRUEBAS
   $opciones = [];
-  $query = new MongoDB\Driver\Query($filtros,$opciones);
+  $query = new MongoDB\Driver\Query($filtros, $opciones);
   $cursor = $mongo->executeQuery('bd_domotica_divided.usuario',$query);
 
   foreach($cursor as $row){
