@@ -6,6 +6,6 @@
     }else{
       echo "No se pudo establecer la conexión";
     }
-    return $conn;
-  }*/
+    return $conn;*/
+  }
 ?>
