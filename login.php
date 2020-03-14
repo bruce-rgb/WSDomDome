@@ -11,11 +11,7 @@
   $filtros = ['usuario'=>''.$usuario.'', 'password'=>''.$password.'']; 
   $opciones = [];
   $query = new MongoDB\Driver\Query($filtros, $opciones);
-<<<<<<< HEAD
   $cursor = $mongo->executeQuery('bd_domotica_divided.usuario', $query);
-=======
-  $cursor = $mongo->executeQuery('bd_domotica_divided.usuario',$query);
->>>>>>> 18229171914b67eb584ec62d8627cdb9d1097276
   foreach($cursor as $row){$row;}
   
   if(isset($row ) != null ){   //isset si row esta definido y es diferente de null 
@@ -30,11 +26,7 @@
       $filtros = ['id'=>''.$id_domicilio.'']; 
       $opciones = [];
       $query = new MongoDB\Driver\Query($filtros, $opciones);
-<<<<<<< HEAD
       $cursor = $mongo->executeQuery('bd_domotica_divided.domicilio', $query);
-=======
-      $cursor = $mongo->executeQuery('bd_domotica_divided.domicilio',$query);
->>>>>>> 18229171914b67eb584ec62d8627cdb9d1097276
 
       foreach($cursor as $domicilio){$domicilio;}
 
@@ -47,7 +39,7 @@
     echo json_encode(array(
       "nombre"=>"$nombre",
       "ap_paterno"=>"$ap_paterno",
-      "ap_materno"=>".$ap_materno.",
+      "ap_materno"=>"$ap_materno",
       "calle"=>"$calle",
       "ciudad"=>"$ciudad",
       "estado"=>"$estado",
