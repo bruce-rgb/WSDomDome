@@ -4,12 +4,11 @@
   $usuario = $data['usuario'];
   $password = $data['password'];
 
-  //Crear un objeto de tipo conexión
+  //Crear la conexión con la base de datos
   $mongo = new MongoDB\Driver\Manager('mongodb+srv://dbOne:adminadmin@domhome-cvs2b.mongodb.net/test?retryWrites=true&w=majority');
 
   //Consulta de datos de usuarios
   $filtros = ['usuario'=>''.$usuario.'', 'password'=>''.$password.'']; 
-      //print_r($filtros); //PRUEBAS
   $opciones = [];
   $query = new MongoDB\Driver\Query($filtros, $opciones);
   $cursor = $mongo->executeQuery('bd_domotica_divided.usuario', $query);
@@ -50,5 +49,5 @@
     header("HTTP/1.1 401 Unauthorized");
     echo json_encode(array("mensaje"=>"Datos de acceso incorrectos"));
   }
-
+  
 ?>
